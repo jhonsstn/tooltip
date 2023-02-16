@@ -2,11 +2,13 @@ import { useRef, useState } from 'react';
 import {
   CenterContainer,
   TooltipBox,
+  TooltipContent,
+  TooltipHeader,
   TooltipTarget,
   TooltipWrapper,
 } from './styled';
 
-function Tooltip({ position, text, children, background, styleMe = true }) {
+function Tooltip({ position, header, children, background, content }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const targetRef = useRef(null);
@@ -28,7 +30,6 @@ function Tooltip({ position, text, children, background, styleMe = true }) {
         onBlur={() => setIsFocused(false)}
         onClick={handleClick}
         ref={targetRef}
-        styleMe={styleMe}
         highlightOnHover={isHovered}
         showOnFocus={isFocused}
       >
@@ -36,8 +37,13 @@ function Tooltip({ position, text, children, background, styleMe = true }) {
       </TooltipTarget>
       {showTooltip && (
         <CenterContainer position={position}>
-          <TooltipBox background={background} position={position}>
-            {text}
+          <TooltipBox
+            background={background}
+            position={position}
+            content={content}
+          >
+            <TooltipHeader background={background}>{header}</TooltipHeader>
+            <TooltipContent background={background}>{content}</TooltipContent>
           </TooltipBox>
         </CenterContainer>
       )}

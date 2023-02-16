@@ -1,3 +1,7 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,5 +14,5 @@ body {
   align-items: center;
   font-family: sans-serif;
   height: 100vh;
-  background: #222831;
+  background: lightgray;
 }

@@ -15,12 +15,15 @@ function TooltipSelector({ onChange }) {
 
   return (
     <Select name='tooltipselector' onChange={handleChange}>
+      <option value=''>None</option>
       <option value='left'>Left</option>
       <option value='top'>Top</option>
+      <option value='top-left'>Top Left</option>
+      <option value='top-right'>Top Right</option>
       <option value='right'>Right</option>
       <option value='bottom'>Bottom</option>
-      {/* <option value='bottom-left'>Bottom Left</option>
-      <option value='bottom-right'>Bottom Right</option> */}
+      <option value='bottom-left'>Bottom Left</option>
+      <option value='bottom-right'>Bottom Right</option>
     </Select>
   );
 }

@@ -5,7 +5,7 @@ import Tooltip from './components/tooltip';
 import './styles.css';
 
 const TooltipTarget = styled.span`
-  color: #fff;
+  color: black;
 `;
 
 export default function App() {
@@ -18,25 +18,17 @@ export default function App() {
   return (
     <div className='App'>
       <TooltipSelector onChange={handleChange} />
-      <Tooltip text='I am a tooltip' position={position} background='ffffff'>
+      <Tooltip
+        header='This is a tooltip'
+        content='Tooltips are used to describe or identify an element. In most
+              scenarios, tooltips help the user understand the meaning, function
+              or alt-text of an element.'
+        position={position}
+      >
         <TooltipTarget>Hover over me!</TooltipTarget>
       </Tooltip>
-      {/* <Tooltip text="I am a tooltip" position="top" background="222831">
-        <TooltipTarget>Top</TooltipTarget>
-      </Tooltip>
-      <Tooltip text="I am a tooltip" position="bottom" background="393e46">
-        <TooltipTarget>Bottom</TooltipTarget>
-      </Tooltip>
-      <Tooltip text="I am a tooltip" position="right" background="eeeeee">
-        <TooltipTarget>Right</TooltipTarget>
-      </Tooltip> */}
-      {/* <p>
-        This is a{" "}
-        <Tooltip text="I am within paragraph" position="top" styleMe={false}>
-          <TooltipTarget>tooltip</TooltipTarget>
-        </Tooltip>{" "}
-        within a paragraph.
-      </p> */}
     </div>
   );
 }
+
+// background='dark'
